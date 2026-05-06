@@ -3,13 +3,13 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-BASE_URL = "https://jsonapi.org"
-ENDPOINT = "/articles"
+BASE_URL = "https://dogapi.dog/api/v2"
+ENDPOINT = "/breeds"
 
 PARAMS = {
-    "include": "author",
-    "fields[articles]": "title,body,author",
-    "fields[people]": "name",
+    #"include": "author",
+    #"fields[articles]": "title,body,author",
+    #"fields[people]": "name",
 }
 
 OUTPUT_DIR = Path("data")
