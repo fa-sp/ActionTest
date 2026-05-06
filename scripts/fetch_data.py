@@ -22,7 +22,7 @@ def fetch_data():
     return response.json()
 
 def save_data(data):
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H_%M")
+    timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H_%M_%S")
     file_path = OUTPUT_DIR / f"{timestamp}.json"
 
     with open(file_path, "w", encoding="utf-8") as f:
