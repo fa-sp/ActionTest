@@ -2,8 +2,11 @@ name: Fetch JSON API Data
 
 on:
   schedule:
-    - cron: "0 * * * *"  # every hour
-  workflow_dispatch:     # allows manual trigger
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # <-- THIS IS THE FIX
 
 jobs:
   fetch-and-store:
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
